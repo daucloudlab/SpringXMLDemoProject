@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="deer" class="kz.kaznitu.lessons.beans.Deer" />
+
+       <bean id="fox" class="kz.kaznitu.lessons.beans.Fox" />
+
+       <bean id="zoo" class="kz.kaznitu.lessons.beans.Zoo" />
+
+       <bean id="animalService1" class="kz.kaznitu.lessons.beans.AnimalService">
+              <property name="animal" ref="deer" />
+              <property name="zoo" ref="zoo" />
+       </bean>
+
+       <bean id="animalService2" class="kz.kaznitu.lessons.beans.AnimalService">
+              <constructor-arg name="animal" ref="fox" />
+              <constructor-arg name="zoo" ref="zoo" />
+       </bean>
+</beans>
